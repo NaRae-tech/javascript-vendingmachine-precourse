@@ -15,7 +15,7 @@ function makeAddModeBasic() {
   ProductAddButtonClicked();
 }
 function makeAddModeTableBasic() {
-  const addModeTableBlock = divElementCreate('addMode-table-Block'); 
+  const addModeTableBlock = divElementCreate('addMode-table-block'); 
   const addTableTitle = h2ElementCreate('상품 현황');
   const addTable = tableElmentCreate('product-add-table');
   const addTableThead = theadElementCreate('상품명, 가격, 수량');
