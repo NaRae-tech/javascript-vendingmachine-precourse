@@ -1,7 +1,7 @@
 import { $ } from '../dom.js';
 import { h1ElementCreate, buttonElementCreate, divElementCreate } from './makeElement.js';
 import ProductPurchaseMode from './product-purchase/productPurchaseMode.js';
-import MachineManageMode from './vending-machine-manage/vendingMachineManageMode.js';
+import MachineManageMode from './vending-machine-manage/manageMode.js';
 import ProductAddMode from './product-add/productAddMode.js';
 
 export function SetMainTitleButtons() {
