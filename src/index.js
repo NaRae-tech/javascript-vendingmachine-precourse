@@ -17,6 +17,7 @@ function mainTabEventListeners(){
   $('#vending-machine-manage-menu').addEventListener('click', MachineManageMode);
   $('#product-add-menu').addEventListener('click', ProductAddMode);
 }
+
 export function vendingMachine() {
   setMainTitleButtons();
   mainTabEventListeners();
