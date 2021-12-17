@@ -4,10 +4,4 @@ export class Item{
     this.price = _price;
     this.count = _count;
   }
-  upCount(num) {
-    this.count += num;
-  }
-  downCount(num) {
-    this.count -= num;
-  }
 }
