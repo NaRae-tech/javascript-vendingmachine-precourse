@@ -13,6 +13,12 @@ export function divElementCreate(id) {
   div.setAttribute('id', id);
   return div;
 }
+export function pElementCreate(id, text) {
+  const p = document.createElement('p');
+  p.setAttribute('id', id);
+  p.innerText = text;
+  return p;
+}
 export function inputElementCreate(id, type, placeholder) {
   const input = document.createElement('input');
   input.setAttribute('id', id);
@@ -53,6 +59,20 @@ export function trElementCreate(text, className) {
     const tempTd = td.cloneNode(true);
     tempTd.innerHTML = text[i][0];
     tempTd.setAttribute('class', text[i][1]);
+    tr.appendChild(tempTd);
+  }
+  return tr;
+}
+export function trIdElementCreate(text) {
+  const tr = document.createElement('tr');
+  const td = document.createElement('td');
+  console.log(text);
+  for (let i = 0; i < text.length; i++){
+    const tempTd = td.cloneNode(true);
+    tempTd.innerHTML = text[i][0];
+    if (text[i] !== '') {
+      tempTd.setAttribute('id', text[i][1]);
+    }
     tr.appendChild(tempTd);
   }
   return tr;
