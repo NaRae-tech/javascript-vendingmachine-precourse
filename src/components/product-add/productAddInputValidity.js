@@ -20,7 +20,7 @@ function countValidity(count) {
   if (isNaN(parseInt(count))) {
     return alert('물품 개수는 숫자로 입력해주세요.');
   }
-  if (count < 1) {
+  if (parseInt(count) < 1) {
     return alert('물품 개수는 1개 이상이여야 합니다.');
   }
   return true;

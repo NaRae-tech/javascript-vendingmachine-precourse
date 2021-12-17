@@ -1,6 +1,7 @@
 import { $ } from '../../dom.js';
 import { Item } from '../object/itemInformation.js';
 import { productAddInputValidity } from './productAddInputValidity.js';
+import ProductAddMode from './productAddMode.js';
 
 function duplicationValidity(name, price, count, itemList) {
   for (let i = 0; i < itemList.length; i++){
@@ -16,15 +17,15 @@ function productAdd() {
   const productPrice = $('#product-price-input').value;
   const productCount = $('#product-quantity-input').value;
   const duplicationIndex = duplicationValidity(productName, productPrice, productCount, itemList);
-  if (duplicationIndex !== -1) {
+  if (duplicationIndex > -1 && productAddInputValidity(productName, productPrice, productCount)) {
     itemList[duplicationIndex].count = parseInt(itemList[duplicationIndex].count) + parseInt(productCount);
-    console.log(itemList);
   }
   else if (productAddInputValidity(productName, productPrice, productCount)) {
     const item = new Item(productName, productPrice, productCount);
     itemList.push(item);
   }
   localStorage.setItem('itemList', JSON.stringify(itemList));
+  ProductAddMode();
 }
 export function ProductAddButtonClicked() {
   $('#product-add-button').addEventListener('click', productAdd);

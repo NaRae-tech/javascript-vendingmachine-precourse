@@ -9,7 +9,7 @@ function makeAddModeBasic() {
   const productNameInput = inputElementCreate('product-name-input', 'text', '상품명');
   const productPriceInput = inputElementCreate('product-price-input', 'number', '가격');
   const productCountInput = inputElementCreate('product-quantity-input', 'number', '수량');
-  const productAddButton = buttonElementCreate('product-add-button', 'button', '추가하기');
+  const productAddButton = buttonElementCreate('product-add-button', 'submit', '추가하기');
   addModeInputBlock.append(title, productNameInput, productPriceInput, productCountInput, productAddButton);
   $('#contents').appendChild(addModeInputBlock);
   ProductAddButtonClicked();
