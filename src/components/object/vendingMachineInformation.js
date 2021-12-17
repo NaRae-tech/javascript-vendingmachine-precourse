@@ -1,4 +1,4 @@
-export class vendingMachine{
+export class VendingMachine{
   constructor() {
     this.itemList = [];
     this.coinList = [{ 'FIVE-HUN': 0 }, { 'ONE-HUN': 0 }, { 'FIFTY': 0 }, { 'TEN': 0 }];
