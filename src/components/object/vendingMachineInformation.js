@@ -1,7 +1,7 @@
 export class VendingMachine{
   constructor() {
     this.itemList = [];
-    this.coinList = [{ 'count': 0 }, { 'count': 0 }, { 'count': 0 }, { 'count': 0 }];
+    this.coinList = { 'count':[0,0,0,0] };
   }
   pushItem(item) {
     this.itemList.push(item);

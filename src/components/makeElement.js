@@ -66,7 +66,6 @@ export function trElementCreate(text, className) {
 export function trIdElementCreate(text) {
   const tr = document.createElement('tr');
   const td = document.createElement('td');
-  console.log(text);
   for (let i = 0; i < text.length; i++){
     const tempTd = td.cloneNode(true);
     tempTd.innerHTML = text[i][0];
