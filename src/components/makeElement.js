@@ -43,8 +43,11 @@ export function theadElementCreate(text) {
   }
   return thead;
 }
-export function trElementCreate(text) {
+export function trElementCreate(text, className) {
   const tr = document.createElement('tr');
+  if (className !== '') {
+    tr.setAttribute('class', className);
+  }
   const td = document.createElement('td');
   for (let i = 0; i < text.length; i++){
     const tempTd = td.cloneNode(true);
@@ -53,4 +56,8 @@ export function trElementCreate(text) {
     tr.appendChild(tempTd);
   }
   return tr;
+}
+export function tbodyElementCreate() {
+  const tbody = document.createElement('tbody');
+  return tbody;
 }

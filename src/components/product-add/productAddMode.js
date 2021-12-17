@@ -1,5 +1,5 @@
 import { $ } from '../../dom.js';
-import { buttonElementCreate, divElementCreate, h2ElementCreate, inputElementCreate, tableElmentCreate, theadElementCreate } from '../makeElement.js';
+import { buttonElementCreate, divElementCreate, h2ElementCreate, inputElementCreate, tableElmentCreate, tbodyElementCreate, theadElementCreate, trElementCreate } from '../makeElement.js';
 import { ResetContents } from '../resetContents.js';
 import { ProductAddButtonClicked } from './productAddButtonClicked.js';
 
@@ -19,14 +19,21 @@ function makeAddModeTableBasic() {
   const addTableTitle = h2ElementCreate('상품 현황');
   const addTable = tableElmentCreate('product-add-table');
   const addTableThead = theadElementCreate('상품명, 가격, 수량');
+  const addTableTbody = tbodyElementCreate();
   addTable.appendChild(addTableThead);
+  addTable.appendChild(addTableTbody);
   addModeTableBlock.append(addTableTitle, addTable);
   $('#contents').appendChild(addModeTableBlock);
 }
 function makeAddModeTable() {
   makeAddModeTableBasic();
   const itemList = JSON.parse(localStorage.getItem('itemList'));
-  console.log(itemList);
+  for (let i = 0; i < itemList.length; i++){
+    const addTableTr = trElementCreate([
+      [itemList[i].name, 'product-manage-name'], [itemList[i].price, 'product-manage-price'], [itemList[i].count, 'product-manage-quantity']
+    ], 'product-manage-item');
+    $('#product-add-table tbody').appendChild(addTableTr);
+  }
 }
 export default function ProductAddMode() {
   ResetContents();
